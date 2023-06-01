@@ -1,6 +1,6 @@
+#include "tree.h"
 #include <iostream>
 #include <string>
-#include "tree.h"
 
 
 int main()
@@ -17,4 +17,4 @@ int main()
    t1.print();   // this will recursively print the tree.
 
    return 0;
-} 
+}

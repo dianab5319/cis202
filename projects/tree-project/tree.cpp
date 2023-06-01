@@ -23,7 +23,6 @@ int Tree::size() const
    else { return root->size(); }
 }
 void Tree::print() const {
-  std::cout << "Tree Print" << std::endl;
   if(root!= nullptr){
     root->print();
   }
@@ -45,4 +44,3 @@ void Node::print() const{
   }
 
 }
-
