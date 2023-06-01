@@ -38,9 +38,9 @@ int Node::size() const
    return 1 + sum;
 }
 void Node::print() const{
-  std::cout << data << std::endl;
+
   for(Node* np: children){
     np->print();
   }
-
+  std::cout << data << std::endl;
 }
