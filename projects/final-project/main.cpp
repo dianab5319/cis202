@@ -1,6 +1,6 @@
 /*
 FileName: main.cpp
-Description: The program creates seven objects of type Mountain. Each objects is set with it's mountain name, 
+Description: The program creates seven objects of type Mountain. Each object is set with it's mountain name, 
             country, and elevation. It is also able to convert the elevation value from feet to meters.
             The program will output each object's information as well as the shortest elevation found through
             the method minElevation. 
