@@ -1,11 +1,23 @@
+/*
+FileName: main.cpp
+Description: The program creates seven objects of type Mountain. Each objects is set with it's mountain name, 
+            country, and elevation. It is also able to convert the elevation value from feet to meters.
+            The program will output each object's information as well as the shortest elevation found through
+            the method minElevation. 
+date: 06/06/23
+author:Diana Barbosa
+email: dianab5319@student.vvc.edu
 
-
+*/
 #include <iostream>
+#include <iomanip>
 #include <string>
 #include <vector>
 using namespace std;
 #include "Mountain.h"
 
+//Determines the smallest elevation among the mountain list
+// smallest value is returned
 int minElevation(vector<Mountain> mList ){
    Mountain firstObj = mList.at(0);
    int minVal = firstObj.getElevation();
@@ -22,6 +34,8 @@ vector<Mountain> listMountains;
 int minVal;
 string minMountain;
 
+//Mountain objects are created with their respective information
+//Objects are stored into ArrayList named listMountains
 Mountain obj1;
 obj1.setMountain("Chimborazo");
 obj1.setCountry("Ecuador");
@@ -64,20 +78,26 @@ obj7.setCountry("Switzerland");
 obj7.setElevation(9719);
 listMountains.push_back(obj7);
 
+//minElevation is called
 minVal = minElevation(listMountains);
 
+//The Objects are printed from the list and their respective
+//information are printed as well as the elevation in meters
 for(auto m: listMountains){
    cout << m.getMountain() << " " 
         << m.getCountry() << " "
-        << m.getElevation() << "ft "
-        << m.toMeters() << "m " << endl;
+        << m.getElevation() << " ft "
+        << fixed << setprecision(2) << m.toMeters() << " m " << endl;
+//In the loop the smallet Elevation is paired with their respective
+//Mountain name
    if(m.getElevation() == minVal){
       minVal = m.getElevation();
       minMountain = m.getMountain();
    }
 }
 
-cout << "Shortest Mountain: " << minMountain << " " << minVal << "ft" << endl;
+//Smallest mountain Value is printed with it's elevation in ft
+cout << "Shortest Mountain: " << minMountain << " " << minVal << " ft" << endl;
 
 return 0;
 }
